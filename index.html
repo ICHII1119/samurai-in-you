@@ -11,7 +11,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='80' fill='%230a0a10'/><text x='256' y='300' font-size='240' text-anchor='middle' fill='%23c9a84c' font-family='serif'>侍</text></svg>">
 <title>SAMURAI in You — Card Compass</title>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&family=Noto+Serif+JP:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════
    DESIGN SYSTEM — SAMURAI COMPASS PWA
@@ -38,8 +38,8 @@
   --r: 12px;
   --r-lg: 20px;
   --tr: .35s cubic-bezier(.4,0,.2,1);
-  --font: 'Noto Serif JP', 'Hiragino Mincho Pro', serif;
-  --font-brush: 'Zen Antique Soft', serif;
+  --font: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  --font-brush: 'Cormorant Garamond', 'Zen Antique Soft', serif;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
@@ -52,7 +52,7 @@ body {
   color: var(--cream);
   min-height: 100vh;
   min-height: 100dvh;
-  line-height: 1.8;
+  line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   padding-top: var(--safe-top);
@@ -230,8 +230,9 @@ body::after {
   border: none;
   cursor: pointer;
   font-family: var(--font);
-  font-size: .88rem;
-  letter-spacing: .06em;
+  font-size: .85rem;
+  font-weight: 500;
+  letter-spacing: .03em;
   transition: all var(--tr);
   text-decoration: none;
   position: relative;
@@ -359,9 +360,10 @@ body::after {
 .page { max-width: 720px; margin: 0 auto; padding: 1.8rem 1.2rem 5rem }
 .page-title { text-align: center; margin-bottom: 2rem }
 .page-title h2 {
-  font-size: 1.3rem;
+  font-family: var(--font-brush);
+  font-size: 1.5rem;
   color: var(--gold);
-  letter-spacing: .12em;
+  letter-spacing: .06em;
   font-weight: 600;
 }
 .page-title p {
@@ -592,7 +594,7 @@ body::after {
   font-weight: 600;
   margin-top: .15rem;
 }
-.ch-text { font-size: .82rem; line-height: 1.7; color: var(--cream) }
+.ch-text { font-size: .85rem; line-height: 1.65; color: var(--cream) }
 
 /* ══════════════════════════════════════
    RESULT SCREEN
@@ -621,9 +623,9 @@ body::after {
 .result-text { font-size: .88rem; line-height: 1.8 }
 
 .sec-label {
-  font-size: .68rem;
+  font-size: .7rem;
   color: var(--gold);
-  letter-spacing: .18em;
+  letter-spacing: .14em;
   margin-bottom: .8rem;
   display: flex;
   align-items: center;
@@ -658,7 +660,7 @@ body::after {
   from { opacity: 0; transform: scale(.94) translateY(6px) }
   to { opacity: 1; transform: scale(1) translateY(0) }
 }
-.r-card .rc-ja { font-size: .95rem; font-weight: 600; color: var(--gold); display: block; margin-bottom: .15rem }
+.r-card .rc-ja { font-family: var(--font-brush); font-size: 1.05rem; font-weight: 600; color: var(--gold); display: block; margin-bottom: .2rem; letter-spacing: .02em }
 .r-card .rc-en { font-size: .62rem; color: var(--muted); letter-spacing: .08em; display: block; margin-bottom: .5rem }
 .r-card .rc-desc { font-size: .73rem; color: var(--cream2); line-height: 1.6 }
 
@@ -675,12 +677,12 @@ body::after {
 .m-quote .mq-ch { font-size: .62rem; color: var(--gold); margin-bottom: .35rem; letter-spacing: .1em; font-weight: 600 }
 .m-quote .mq-ja {
   font-size: .85rem;
-  line-height: 1.8;
+  line-height: 1.7;
   color: var(--cream);
   font-style: italic;
 }
-.m-quote .mq-ja::before { content: '「' }
-.m-quote .mq-ja::after { content: '」' }
+.m-quote .mq-ja::before { content: '\"' }
+.m-quote .mq-ja::after { content: '\"' }
 .m-quote .mq-en { font-size: .7rem; color: var(--muted); margin-top: .35rem; line-height: 1.5 }
 
 .advice-wrap {
@@ -690,8 +692,8 @@ body::after {
   padding: 1.6rem;
   margin-bottom: 1.8rem;
   white-space: pre-wrap;
-  font-size: .8rem;
-  line-height: 2;
+  font-size: .84rem;
+  line-height: 1.85;
   color: var(--cream);
 }
 .advice-wrap .adv-title {
@@ -829,6 +831,25 @@ body::after {
   .logo-area .kanji { font-size: 3.2rem }
   .page { padding: 1.4rem 1rem 4rem }
   .mod-card { padding: 1.2rem 1rem }
+}
+
+/* ── MOBILE ENHANCEMENTS ── */
+@media (max-width: 480px) {
+  .ch-item { padding: 1rem 1rem; }
+  .ch-text { font-size: .84rem; line-height: 1.65; }
+  .ch-num { width: 32px; height: 32px; font-size: .72rem }
+  .r-card { padding: 1.1rem }
+  .r-card .rc-ja { font-size: 1rem }
+  .r-card .rc-desc { font-size: .76rem; line-height: 1.65 }
+  .m-quote { padding: 1rem 1.1rem }
+  .m-quote .mq-ja { font-size: .88rem }
+  .advice-wrap { padding: 1.3rem; font-size: .82rem; line-height: 1.85 }
+  .result-actions { gap: .5rem }
+  .result-actions .btn { min-width: 110px; font-size: .78rem; padding: .65rem 1rem }
+  .menu-card { padding: 1.1rem 1.2rem }
+  .mod-card { padding: 1.4rem 1.1rem }
+  .search-input { font-size: .88rem; padding: .75rem 1rem .75rem 2.5rem }
+  .home-hero .hero-greet { font-size: 1.05rem }
 }
 </style>
 </head>
@@ -1175,8 +1196,8 @@ function selectModule(id){
 function renderChallengeList(query){
   const list=CHALLENGES[STATE.module];
   const q=query.trim();
-  const filtered=list.map((c,i)=>({i,text:c[0],en:c[1]}))
-    .filter(c=>!q||c.text.includes(q)||c.en.toLowerCase().includes(q.toLowerCase()));
+  const filtered=list.map((c,i)=>({i,text:c[1],en:c[1]}))
+    .filter(c=>!q||c.text.toLowerCase().includes(q.toLowerCase()));
   document.getElementById('challenge-count').textContent=filtered.length+' / '+list.length+' items';
   document.getElementById('challenge-list').innerHTML=filtered.length
     ? filtered.map(c=>`<div class="ch-item" onclick="selectChallenge(${c.i})">
@@ -1201,7 +1222,7 @@ function selectChallenge(idx){
     userName:STATE.user.name,
     module:STATE.module,
     challengeIdx:idx,
-    challengeJa:challenge[0],
+    challengeJa:challenge[1],
     challengeEn:challenge[1],
     mindsets:rec.mindsets,
     skills:rec.skills,
@@ -1286,7 +1307,7 @@ const MOD_INTRO={
 
 function generateAdvice(modId,challenge,mindsets,skills,mastery){
   const [m1,m2]=mindsets,[s1,s2,s3]=skills,[q1,q2]=mastery;
-  return '━━ Guidance Through Samurai Wisdom ━━\n\n'+MOD_INTRO[modId]+'\n\n◆ Mindset\n\n「'+m1.ja+'（'+m1.en+'): '+m1.de+'— This spirit is what is needed now. With this attitude, difficulties before you transform into opportunities for growth.\n\n「'+m2.ja+'（'+m2.en+'): '+m2.de+'— This perspective is also essential. By reframing the situation from this viewpoint, breakthroughs you had not seen will emerge.\n\n◆ Skills in Practice\n\n「'+s1.ja+'（'+s1.en+'): '+s1.de+'— This is the starting point for your first action.\n\n「'+s2.ja+'（'+s2.en+'): '+s2.de+'— Be mindful of this in daily practice. Small, consistent efforts produce great change.\n\n「'+s3.ja+'（'+s3.en+'): '+s3.de+'— This power will bring depth and precision to your actions.\n\n◆ Words of the Ancients\n\n「'+q1.ja+'」\n\n「'+q2.ja+'」\n\n━━ One Step Forward ━━\n\nThere are no dead ends on the path — only turns you have not yet noticed. Move forward one step at a time. Beyond this challenge, a deeper Way awaits you.';
+  return '━━ Guidance Through Samurai Wisdom ━━\n\n'+MOD_INTRO[modId]+'\n\n◆ Mindset\n\n「'+m1.en+'): '+m1.de+'— This spirit is what is needed now. With this attitude, difficulties before you transform into opportunities for growth.\n\n「'+m2.en+'): '+m2.de+'— This perspective is also essential. By reframing the situation from this viewpoint, breakthroughs you had not seen will emerge.\n\n◆ Skills in Practice\n\n「'+s1.en+'): '+s1.de+'— This is the starting point for your first action.\n\n「'+s2.en+'): '+s2.de+'— Be mindful of this in daily practice. Small, consistent efforts produce great change.\n\n「'+s3.en+'): '+s3.de+'— This power will bring depth and precision to your actions.\n\n◆ Words of the Ancients\n\n「'+q1.en+'」\n\n「'+q2.en+'」\n\n━━ One Step Forward ━━\n\nThere are no dead ends on the path — only turns you have not yet noticed. Move forward one step at a time. Beyond this challenge, a deeper Way awaits you.';
 }
 
 // ═══════════════════════════════════════════════════════
@@ -1300,22 +1321,20 @@ function renderResult(r,source){
 
   const mCards=r.mindsets.map((c,i)=>
     '<div class="r-card" style="animation-delay:'+i*.1+'s">'+
-      '<span class="rc-ja">'+c.ja+'</span>'+
-      '<span class="rc-en">'+c.en+'</span>'+
+      '<span class="rc-ja">'+c.en+'</span>'+
       '<div class="rc-desc">'+c.de+'</div>'+
     '</div>').join('');
 
   const sCards=r.skills.map((c,i)=>
     '<div class="r-card" style="animation-delay:'+i*.1+'s">'+
-      '<span class="rc-ja">'+c.ja+'</span>'+
-      '<span class="rc-en">'+c.en+'</span>'+
+      '<span class="rc-ja">'+c.en+'</span>'+
       '<div class="rc-desc">'+c.de+'</div>'+
     '</div>').join('');
 
   const mQuotes=r.mastery.map(m=>
     '<div class="m-quote">'+
       '<div class="mq-ch">'+m.ch+' 第'+m.n+'条</div>'+
-      '<div class="mq-ja">'+m.ja+'</div>'+
+      '<div class="mq-ja">'+m.en+'</div>'+
       '<div class="mq-en">'+m.en+'</div>'+
     '</div>').join('');
 
@@ -1327,7 +1346,7 @@ function renderResult(r,source){
   document.getElementById('result-inner').innerHTML=
     '<button class="back-link" onclick="'+backFn+'">'+backLabel+'</button>'+
     '<div class="result-box">'+
-      '<div class="result-mod">'+mod.icon+' '+mod.ja+'</div>'+
+      '<div class="result-mod">'+mod.icon+' '+mod.en+'</div>'+
       '<div class="result-text">'+r.challengeJa+'</div>'+
     '</div>'+
     '<div class="sec-label">RECOMMENDED MINDSET</div>'+
@@ -1372,7 +1391,7 @@ function shareWhatsApp(){
   const r=STATE.result;
   const mod=MODULES.find(m=>m.id===r.module);
   const short=r.challengeJa.length>40?r.challengeJa.substring(0,40)+'…':r.challengeJa;
-  const text='【SAMURAI in You — Card Compass】\n\n📋 '+mod.ja+' Module\n\n課題: '+short+'\n\n⚔ マインドセット: '+r.mindsets.map(m=>m.ja).join(' / ')+'\n🗡 スキルセット: '+r.skills.map(s=>s.ja).join(' / ')+'\n\n📜 格言:\n「'+r.mastery[0].ja.substring(0,40)+'…」\n\n#SAMURAIinYou';
+  const text='【SAMURAI in You — Card Compass】\n\n📋 '+mod.en+' Module\n\n課題: '+short+'\n\n⚔ マインドセット: '+r.mindsets.map(m=>m.en).join(' / ')+'\n🗡 スキルセット: '+r.skills.map(s=>s.en).join(' / ')+'\n\n📜 格言:\n「'+r.mastery[0].en.substring(0,60)+'…」\n\n#SAMURAIinYou';
   window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank');
 }
 
@@ -1418,7 +1437,7 @@ function renderHistory(){
       '<div class="hist-head" onclick="toggleHistoryItem('+ri+')">'+
         '<div class="hist-meta">'+
           '<div class="hm-date">'+ds+'</div>'+
-          '<div class="hm-mod">'+mod.icon+' '+mod.ja+'</div>'+
+          '<div class="hm-mod">'+mod.icon+' '+mod.en+'</div>'+
           '<div class="hm-text">'+short+'</div>'+
         '</div>'+
         '<span style="color:var(--muted);font-size:.75rem">▼</span>'+
@@ -1426,8 +1445,8 @@ function renderHistory(){
       '<div class="hist-detail" id="hd-'+ri+'">'+
         '<div style="font-size:.75rem;color:var(--muted);margin-bottom:.5rem">課題 #'+(r.challengeIdx+1)+'</div>'+
         '<div style="font-size:.82rem;margin-bottom:.7rem">'+r.challengeJa+'</div>'+
-        '<div style="font-size:.72rem;color:var(--gold);margin-bottom:.25rem">Mindset: '+r.mindsets.map(m=>m.ja).join(' / ')+'</div>'+
-        '<div style="font-size:.72rem;color:var(--gold);margin-bottom:.7rem">Skillset: '+r.skills.map(s=>s.ja).join(' / ')+'</div>'+
+        '<div style="font-size:.72rem;color:var(--gold);margin-bottom:.25rem">Mindset: '+r.mindsets.map(m=>m.en).join(' / ')+'</div>'+
+        '<div style="font-size:.72rem;color:var(--gold);margin-bottom:.7rem">Skillset: '+r.skills.map(s=>s.en).join(' / ')+'</div>'+
         '<div class="hist-detail-actions">'+
           '<button class="btn btn-ghost btn-sm" onclick="viewHistoryResult('+ri+')">詳細を見る</button>'+
           '<button class="btn btn-danger btn-sm" onclick="deleteResult(\''+r.id+'\')">削除</button>'+
