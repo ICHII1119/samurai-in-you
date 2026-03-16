@@ -30,9 +30,9 @@
   --red2: #9e2b2b;
   --cream: #ede5d5;
   --cream2: #d4cbb8;
-  --muted: #7a7168;
-  --border: rgba(212,168,75,.18);
-  --border2: rgba(212,168,75,.08);
+  --muted: #9a8f82;
+  --border: rgba(212,168,75,.25);
+  --border2: rgba(212,168,75,.12);
   --shadow: 0 8px 32px rgba(0,0,0,.5);
   --shadow-sm: 0 2px 8px rgba(0,0,0,.3);
   --r: 12px;
@@ -52,7 +52,7 @@ body {
   color: var(--cream);
   min-height: 100vh;
   min-height: 100dvh;
-  line-height: 1.7;
+  line-height: 1.75;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   padding-top: var(--safe-top);
@@ -330,12 +330,12 @@ body::after {
   line-height: 1.2;
 }
 .hdr-right { display: flex; align-items: center; gap: .5rem }
-.hdr-user { font-size: .72rem; color: var(--muted); text-align: right }
+.hdr-user { font-size: .78rem; color: var(--muted); text-align: right }
 .badge-admin {
   background: linear-gradient(135deg, var(--red), var(--red2));
   color: #fff;
-  font-size: .55rem;
-  padding: .18rem .5rem;
+  font-size: .65rem;
+  padding: .2rem .55rem;
   border-radius: 20px;
   letter-spacing: .06em;
   margin-left: .3rem;
@@ -361,15 +361,15 @@ body::after {
 .page-title { text-align: center; margin-bottom: 2rem }
 .page-title h2 {
   font-family: var(--font-brush);
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   color: var(--gold);
   letter-spacing: .06em;
   font-weight: 600;
 }
 .page-title p {
-  font-size: .78rem;
+  font-size: .85rem;
   color: var(--muted);
-  margin-top: .4rem;
+  margin-top: .5rem;
   letter-spacing: .04em;
 }
 
@@ -479,8 +479,8 @@ body::after {
   background: var(--gold-dim);
   border-radius: 10px;
 }
-.menu-card .mc-body h3 { font-size: .92rem; color: var(--cream); font-weight: 600 }
-.menu-card .mc-body p { font-size: .72rem; color: var(--muted); margin-top: .15rem }
+.menu-card .mc-body h3 { font-size: 1rem; color: var(--cream); font-weight: 600 }
+.menu-card .mc-body p { font-size: .8rem; color: var(--muted); margin-top: .2rem }
 
 /* ══════════════════════════════════════
    MODULE SELECT
@@ -488,15 +488,15 @@ body::after {
 .mod-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 1.1rem;
 }
-@media (max-width: 480px) { .mod-grid { grid-template-columns: 1fr } }
+@media (max-width: 520px) { .mod-grid { grid-template-columns: 1fr } }
 
 .mod-card {
   background: var(--bg3);
   border: 1px solid var(--border2);
   border-radius: var(--r);
-  padding: 1.6rem 1.2rem;
+  padding: 1.8rem 1.4rem;
   cursor: pointer;
   transition: all var(--tr);
   text-align: center;
@@ -522,21 +522,21 @@ body::after {
 }
 .mod-card .mc-emoji { font-size: 2.4rem; display: block; margin-bottom: .7rem }
 .mod-card .mc-name {
-  font-size: .92rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--cream);
   display: block;
-  margin-bottom: .25rem;
+  margin-bottom: .3rem;
 }
 .mod-card .mc-en {
-  font-size: .65rem;
+  font-size: .72rem;
   color: var(--muted);
   letter-spacing: .1em;
   display: block;
-  margin-bottom: .5rem;
+  margin-bottom: .55rem;
   text-transform: uppercase;
 }
-.mod-card .mc-desc { font-size: .72rem; color: var(--muted); line-height: 1.6 }
+.mod-card .mc-desc { font-size: .8rem; color: var(--muted); line-height: 1.7 }
 
 /* ══════════════════════════════════════
    CHALLENGE LIST
@@ -564,19 +564,19 @@ body::after {
   font-size: .8rem;
   pointer-events: none;
 }
-.ch-count { font-size: .7rem; color: var(--muted); text-align: right; margin: .4rem 0 .8rem }
+.ch-count { font-size: .78rem; color: var(--muted); text-align: right; margin: .5rem 0 .9rem }
 
 .ch-list { display: flex; flex-direction: column; gap: .5rem }
 .ch-item {
   background: var(--bg3);
   border: 1px solid var(--border2);
   border-radius: var(--r);
-  padding: .8rem 1rem;
+  padding: 1rem 1.1rem;
   cursor: pointer;
   transition: all var(--tr);
   display: flex;
   align-items: flex-start;
-  gap: .8rem;
+  gap: .9rem;
 }
 .ch-item:hover { border-color: var(--gold); background: var(--bg4) }
 .ch-item:active { transform: scale(.99) }
@@ -594,7 +594,7 @@ body::after {
   font-weight: 600;
   margin-top: .15rem;
 }
-.ch-text { font-size: .85rem; line-height: 1.65; color: var(--cream) }
+.ch-text { font-size: .9rem; line-height: 1.75; color: var(--cream) }
 
 /* ══════════════════════════════════════
    RESULT SCREEN
@@ -619,14 +619,14 @@ body::after {
   letter-spacing: .12em;
   font-weight: 600;
 }
-.result-mod { font-size: .68rem; color: var(--muted); margin-bottom: .35rem; letter-spacing: .08em }
-.result-text { font-size: .88rem; line-height: 1.8 }
+.result-mod { font-size: .76rem; color: var(--muted); margin-bottom: .4rem; letter-spacing: .08em }
+.result-text { font-size: .92rem; line-height: 1.85 }
 
 .sec-label {
-  font-size: .7rem;
+  font-size: .78rem;
   color: var(--gold);
   letter-spacing: .14em;
-  margin-bottom: .8rem;
+  margin-bottom: .9rem;
   display: flex;
   align-items: center;
   gap: .5rem;
@@ -649,7 +649,7 @@ body::after {
   background: var(--bg3);
   border: 1px solid var(--border2);
   border-radius: var(--r);
-  padding: 1rem;
+  padding: 1.2rem;
   opacity: 0;
   animation: cardPop .5s cubic-bezier(.16,1,.3,1) forwards;
 }
@@ -660,47 +660,47 @@ body::after {
   from { opacity: 0; transform: scale(.94) translateY(6px) }
   to { opacity: 1; transform: scale(1) translateY(0) }
 }
-.r-card .rc-ja { font-family: var(--font-brush); font-size: 1.05rem; font-weight: 600; color: var(--gold); display: block; margin-bottom: .2rem; letter-spacing: .02em }
-.r-card .rc-en { font-size: .62rem; color: var(--muted); letter-spacing: .08em; display: block; margin-bottom: .5rem }
-.r-card .rc-desc { font-size: .73rem; color: var(--cream2); line-height: 1.6 }
+.r-card .rc-ja { font-family: var(--font-brush); font-size: 1.12rem; font-weight: 600; color: var(--gold); display: block; margin-bottom: .3rem; letter-spacing: .02em }
+.r-card .rc-en { font-size: .72rem; color: var(--muted); letter-spacing: .08em; display: block; margin-bottom: .55rem }
+.r-card .rc-desc { font-size: .8rem; color: var(--cream2); line-height: 1.7 }
 
 .mastery-wrap { display: flex; flex-direction: column; gap: .8rem; margin-bottom: 1.8rem }
 .m-quote {
   background: var(--bg3);
   border-left: 3px solid var(--gold);
   border-radius: 0 var(--r) var(--r) 0;
-  padding: 1rem 1.2rem;
+  padding: 1.2rem 1.4rem;
   opacity: 0;
   animation: cardPop .5s cubic-bezier(.16,1,.3,1) forwards;
 }
 .m-quote:nth-child(2) { animation-delay: .15s }
-.m-quote .mq-ch { font-size: .62rem; color: var(--gold); margin-bottom: .35rem; letter-spacing: .1em; font-weight: 600 }
+.m-quote .mq-ch { font-size: .72rem; color: var(--gold); margin-bottom: .4rem; letter-spacing: .1em; font-weight: 600 }
 .m-quote .mq-ja {
-  font-size: .85rem;
-  line-height: 1.7;
+  font-size: .92rem;
+  line-height: 1.8;
   color: var(--cream);
   font-style: italic;
 }
 .m-quote .mq-ja::before { content: '\"' }
 .m-quote .mq-ja::after { content: '\"' }
-.m-quote .mq-en { font-size: .7rem; color: var(--muted); margin-top: .35rem; line-height: 1.5 }
+.m-quote .mq-en { font-size: .78rem; color: var(--muted); margin-top: .4rem; line-height: 1.6 }
 
 .advice-wrap {
   background: linear-gradient(165deg, var(--bg3), var(--bg2));
   border: 1px solid var(--border);
   border-radius: var(--r);
-  padding: 1.6rem;
+  padding: 1.8rem;
   margin-bottom: 1.8rem;
   white-space: pre-wrap;
-  font-size: .84rem;
-  line-height: 1.85;
+  font-size: .9rem;
+  line-height: 1.95;
   color: var(--cream);
 }
 .advice-wrap .adv-title {
-  font-size: .68rem;
+  font-size: .75rem;
   color: var(--gold);
   letter-spacing: .18em;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
   display: block;
   font-weight: 600;
 }
@@ -744,7 +744,7 @@ body::after {
   overflow: hidden;
 }
 .hist-head {
-  padding: .8rem 1rem;
+  padding: .95rem 1.1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -753,9 +753,9 @@ body::after {
 }
 .hist-head:hover { background: var(--bg4) }
 .hist-meta { flex: 1; min-width: 0 }
-.hist-meta .hm-date { font-size: .65rem; color: var(--muted) }
-.hist-meta .hm-mod { font-size: .68rem; color: var(--gold); margin-top: .1rem }
-.hist-meta .hm-text { font-size: .8rem; color: var(--cream); margin-top: .15rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.hist-meta .hm-date { font-size: .75rem; color: var(--muted) }
+.hist-meta .hm-mod { font-size: .76rem; color: var(--gold); margin-top: .12rem }
+.hist-meta .hm-text { font-size: .86rem; color: var(--cream); margin-top: .18rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
 .hist-detail { display: none; padding: 1rem; border-top: 1px solid var(--border2); font-size: .78rem }
 .hist-detail.open { display: block }
 .hist-detail-actions { display: flex; gap: .5rem; margin-top: .8rem; flex-wrap: wrap }
@@ -833,23 +833,373 @@ body::after {
   .mod-card { padding: 1.2rem 1rem }
 }
 
+/* ══════════════════════════════════════
+   CHALLENGE MODE SWITCHER
+   ══════════════════════════════════════ */
+.ch-mode-tabs {
+  display: flex;
+  gap: .5rem;
+  margin-bottom: 1.4rem;
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  padding: .3rem;
+}
+.ch-tab {
+  flex: 1;
+  padding: .6rem .8rem;
+  border: none;
+  border-radius: calc(var(--r) - 2px);
+  font-family: var(--font);
+  font-size: .82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--tr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  background: transparent;
+  color: var(--muted);
+  letter-spacing: .02em;
+}
+.ch-tab.active {
+  background: var(--bg4);
+  color: var(--gold);
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+.ch-tab:not(.active):hover { color: var(--cream2) }
+
+.ch-random-wrap {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem 3rem;
+  text-align: center;
+  gap: 1.4rem;
+}
+.ch-random-wrap.show { display: flex }
+
+.random-orb {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(212,168,75,.18), rgba(212,168,75,.04));
+  border: 1.5px solid rgba(212,168,75,.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: all .4s cubic-bezier(.16,1,.3,1);
+  box-shadow: 0 0 40px rgba(212,168,75,.08);
+  position: relative;
+}
+.random-orb:hover {
+  transform: scale(1.06);
+  border-color: rgba(212,168,75,.6);
+  box-shadow: 0 0 60px rgba(212,168,75,.2);
+}
+.random-orb.spin {
+  animation: orbSpin .55s cubic-bezier(.16,1,.3,1) forwards;
+}
+@keyframes orbSpin {
+  0%   { transform: scale(1) rotate(0deg) }
+  40%  { transform: scale(.9) rotate(180deg) }
+  100% { transform: scale(1) rotate(360deg) }
+}
+.random-label {
+  font-size: .82rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.random-label strong { color: var(--cream); display: block; font-size: .95rem; margin-bottom: .25rem }
+
+/* ══════════════════════════════════════
+   MENTORING NOTES
+   ══════════════════════════════════════ */
+.mentor-notes-wrap { margin-bottom: 1.8rem }
+
+.mentor-prompts {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  margin-bottom: 1rem;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  padding: 1rem 1.2rem;
+}
+.mentor-prompts-title {
+  font-size: .7rem;
+  color: var(--gold);
+  letter-spacing: .1em;
+  font-weight: 600;
+  margin-bottom: .3rem;
+  text-transform: uppercase;
+}
+.mentor-prompt {
+  display: flex;
+  align-items: flex-start;
+  gap: .55rem;
+  font-size: .8rem;
+  color: var(--cream2);
+  line-height: 1.55;
+}
+.mentor-prompt-num {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  background: var(--gold-dim);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .6rem;
+  color: var(--gold);
+  font-weight: 700;
+  margin-top: .1rem;
+}
+
+.mentor-textarea {
+  width: 100%;
+  min-height: 170px;
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  padding: 1rem 1.1rem;
+  color: var(--cream);
+  font-family: var(--font);
+  font-size: .88rem;
+  line-height: 1.85;
+  resize: vertical;
+  outline: none;
+  transition: border-color var(--tr), box-shadow var(--tr);
+  box-sizing: border-box;
+}
+.mentor-textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-dim);
+}
+.mentor-textarea::placeholder { color: var(--muted); opacity: .65 }
+
+.mentor-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: .5rem;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+.mentor-char-count { font-size: .72rem; color: var(--muted) }
+.notes-saved-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .72rem;
+  color: var(--gold);
+  background: var(--gold-dim);
+  padding: .22rem .65rem;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity .4s;
+}
+.notes-saved-badge.show { opacity: 1 }
+
+/* ══════════════════════════════════════
+   DESCRIBE SITUATION SCREEN
+   ══════════════════════════════════════ */
+.describe-hint {
+  font-size: .84rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.describe-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: .5rem;
+  margin-bottom: 1.6rem;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+.describe-optional {
+  font-size: .72rem;
+  color: var(--muted);
+  font-style: italic;
+}
+.rec-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-top: .6rem;
+}
+.rec-tag {
+  background: var(--gold-dim);
+  color: var(--gold);
+  border: 1px solid rgba(212,168,75,.2);
+  border-radius: 20px;
+  padding: .22rem .75rem;
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+}
+
+/* ══════════════════════════════════════
+   ADMIN COMMENT & MENTOR MESSAGE
+   ══════════════════════════════════════ */
+.admin-comment-section {
+  margin-top: 1rem;
+  padding-top: .9rem;
+  border-top: 1px solid var(--border2);
+}
+.admin-comment-section .ac-label {
+  font-size: .7rem;
+  color: var(--gold);
+  letter-spacing: .12em;
+  font-weight: 600;
+  margin-bottom: .6rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+.admin-comment-section textarea {
+  width: 100%;
+  min-height: 90px;
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  padding: .75rem .9rem;
+  color: var(--cream);
+  font-family: var(--font);
+  font-size: .84rem;
+  line-height: 1.75;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color var(--tr), box-shadow var(--tr);
+}
+.admin-comment-section textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-dim);
+}
+.admin-comment-section textarea::placeholder { color: var(--muted); opacity: .6 }
+.ac-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: .4rem;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+.ac-sent-badge {
+  font-size: .72rem;
+  color: var(--gold);
+  background: var(--gold-dim);
+  padding: .22rem .65rem;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity .4s;
+}
+.ac-sent-badge.show { opacity: 1 }
+
+/* Mentor message shown to users */
+.mentor-message-box {
+  background: linear-gradient(135deg, rgba(212,168,75,.07), rgba(212,168,75,.02));
+  border: 1px solid rgba(212,168,75,.3);
+  border-radius: var(--r);
+  padding: 1rem 1.2rem;
+  margin-top: .8rem;
+  margin-bottom: .5rem;
+}
+.mm-header {
+  font-size: .7rem;
+  color: var(--gold);
+  letter-spacing: .12em;
+  font-weight: 600;
+  margin-bottom: .6rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+.mm-text {
+  font-size: .84rem;
+  color: var(--cream);
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+.mm-date {
+  font-size: .68rem;
+  color: var(--muted);
+  margin-top: .5rem;
+  text-align: right;
+}
+
+/* Unread comment indicator */
+.unread-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .2rem;
+  background: linear-gradient(135deg, var(--red), var(--red2));
+  color: #fff;
+  font-size: .6rem;
+  padding: .15rem .5rem;
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  margin-left: .4rem;
+  vertical-align: middle;
+  animation: pulse 2s ease infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1 }
+  50% { opacity: .6 }
+}
+
+/* Admin stats bar */
+.admin-stats-bar {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+.stat-chip {
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  padding: .5rem .9rem;
+  font-size: .75rem;
+  color: var(--cream2);
+  display: flex;
+  flex-direction: column;
+  gap: .1rem;
+}
+.stat-chip strong {
+  font-size: 1.1rem;
+  color: var(--gold);
+  font-weight: 700;
+  line-height: 1;
+}
+
 /* ── MOBILE ENHANCEMENTS ── */
 @media (max-width: 480px) {
-  .ch-item { padding: 1rem 1rem; }
-  .ch-text { font-size: .84rem; line-height: 1.65; }
-  .ch-num { width: 32px; height: 32px; font-size: .72rem }
+  .ch-item { padding: 1rem 1.1rem; }
+  .ch-text { font-size: .88rem; line-height: 1.75; }
+  .ch-num { width: 32px; height: 32px; font-size: .75rem }
   .r-card { padding: 1.1rem }
-  .r-card .rc-ja { font-size: 1rem }
-  .r-card .rc-desc { font-size: .76rem; line-height: 1.65 }
-  .m-quote { padding: 1rem 1.1rem }
-  .m-quote .mq-ja { font-size: .88rem }
-  .advice-wrap { padding: 1.3rem; font-size: .82rem; line-height: 1.85 }
+  .r-card .rc-ja { font-size: 1.05rem }
+  .r-card .rc-desc { font-size: .8rem; line-height: 1.7 }
+  .m-quote { padding: 1.1rem 1.2rem }
+  .m-quote .mq-ja { font-size: .9rem }
+  .advice-wrap { padding: 1.4rem; font-size: .88rem; line-height: 1.9 }
   .result-actions { gap: .5rem }
-  .result-actions .btn { min-width: 110px; font-size: .78rem; padding: .65rem 1rem }
+  .result-actions .btn { min-width: 110px; font-size: .82rem; padding: .7rem 1rem }
   .menu-card { padding: 1.1rem 1.2rem }
-  .mod-card { padding: 1.4rem 1.1rem }
-  .search-input { font-size: .88rem; padding: .75rem 1rem .75rem 2.5rem }
-  .home-hero .hero-greet { font-size: 1.05rem }
+  .mod-card { padding: 1.5rem 1.2rem }
+  .search-input { font-size: .9rem; padding: .8rem 1rem .8rem 2.5rem }
+  .home-hero .hero-greet { font-size: 1.1rem }
 }
 </style>
 </head>
@@ -944,13 +1294,55 @@ body::after {
       <button class="back-link" onclick="nav('s-module')">← Back to Modules</button>
       <div class="page-title">
         <h2 id="challenge-title">Challenge Cards</h2>
-        <p>Select the challenge closest to your situation</p>
+        <p id="challenge-subtitle">Select the challenge closest to your situation</p>
       </div>
-      <div class="search-wrap">
-        <input class="search-input" id="challenge-search" type="text" placeholder="Filter by keyword…" oninput="filterChallenges()">
+      <!-- Mode tabs -->
+      <div class="ch-mode-tabs">
+        <button class="ch-tab active" id="tab-browse" onclick="setChallengeMode('browse')">
+          📋 Browse All
+        </button>
+        <button class="ch-tab" id="tab-random" onclick="setChallengeMode('random')">
+          🎲 Random Pick
+        </button>
       </div>
-      <div class="ch-count" id="challenge-count"></div>
-      <div class="ch-list" id="challenge-list"></div>
+      <!-- Browse mode -->
+      <div id="ch-browse-wrap">
+        <div class="search-wrap">
+          <input class="search-input" id="challenge-search" type="text" placeholder="Filter by keyword…" oninput="filterChallenges()">
+        </div>
+        <div class="ch-count" id="challenge-count"></div>
+        <div class="ch-list" id="challenge-list"></div>
+      </div>
+      <!-- Random mode -->
+      <div class="ch-random-wrap" id="ch-random-wrap">
+        <div class="random-orb" id="random-orb" onclick="pickRandomChallenge()">🎴</div>
+        <div class="random-label">
+          <strong>Draw Today's Card</strong>
+          Tap the card to randomly select your challenge for today
+        </div>
+        <button class="btn btn-gold" onclick="pickRandomChallenge()">Pick Randomly</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESCRIBE SITUATION -->
+  <div id="s-describe" class="screen">
+    <div class="page">
+      <button class="back-link" onclick="nav('s-challenge')">← Back to Challenges</button>
+      <div class="page-title">
+        <h2>Describe Your Situation</h2>
+        <p>The more you share, the more tailored your recommendations will be</p>
+      </div>
+      <div class="sec-label">SELECTED CHALLENGE</div>
+      <div class="result-box" id="describe-challenge-box" style="margin-bottom:1.8rem"></div>
+      <div class="sec-label">YOUR SITUATION</div>
+      <p class="describe-hint">In your own words, what's happening right now? What makes this challenge difficult for you specifically?</p>
+      <textarea class="mentor-textarea" id="situation-text" placeholder="e.g. I've been managing a new team for 3 months and feel that communication is breaking down. Some members seem disengaged and I'm not sure how to re-motivate them…" oninput="updateSituationChar()" style="min-height:140px"></textarea>
+      <div class="describe-footer">
+        <span class="mentor-char-count" id="situation-char">0 chars</span>
+        <span class="describe-optional">Optional — leave blank to use the challenge card only</span>
+      </div>
+      <button class="btn btn-gold btn-full" onclick="submitSituation()" style="margin-top:.4rem">Get My Recommendations →</button>
     </div>
   </div>
 
@@ -990,24 +1382,24 @@ body::after {
 const ADMIN_PIN = 'SAMURAI2024';
 
 const MINDSET = [
-  {ja:'自己鍛錬',en:'Self-Mastery',dj:'心技体を磨き続ける成長意欲',de:'Continuous pursuit of holistic growth',kw:['成長','スキル','学び','キャリア','向上','習得','資格','能力','アップデート','開発','専門','鍛錬','磨']},
-  {ja:'戦略的思考',en:'Strategic Mindset',dj:'先を見据えた計画的な行動',de:'Strategic foresight and planned execution',kw:['計画','目標','将来','戦略','方向','優先','ビジョン','判断','決断','見通し','ステップ','見据え','方針']},
-  {ja:'柔軟な適応力',en:'Versatility',dj:'変化を味方につける柔軟性',de:'Flexibility to turn change into opportunity',kw:['変化','適応','柔軟','新しい','転換','多様','リモート','ハイブリッド','環境','変革','対応']},
-  {ja:'平常心',en:'Equanimity',dj:'逆境でも動じない冷静さ',de:'Unwavering composure under pressure',kw:['ストレス','疲れ','疲労','プレッシャー','感情','バーンアウト','不安','焦り','冷静','平静','メンタル','浮き沈み']},
-  {ja:'誠実さ',en:'Integrity',dj:'有言実行による信頼関係の構築',de:'Building trust through integrity and accountability',kw:['信頼','誠実','関係','コミュニケーション','人間関係','本音','連携','協力','評価','期待','家族']},
+  {ja:'自己鍛錬',en:'Self-Mastery',dj:'心技体を磨き続ける成長意欲',de:'Continuous pursuit of holistic growth',kw:['成長','スキル','学び','キャリア','向上','習得','資格','能力','アップデート','開発','専門','鍛錬','磨'],ekw:['growth','skill','learn','career','improve','master','train','develop','practice','upskill','progress','ability','competence']},
+  {ja:'戦略的思考',en:'Strategic Mindset',dj:'先を見据えた計画的な行動',de:'Strategic foresight and planned execution',kw:['計画','目標','将来','戦略','方向','優先','ビジョン','判断','決断','見通し','ステップ','見据え','方針'],ekw:['plan','goal','future','strategy','direction','priority','vision','decision','steps','roadmap','objective','milestone','purpose']},
+  {ja:'柔軟な適応力',en:'Versatility',dj:'変化を味方につける柔軟性',de:'Flexibility to turn change into opportunity',kw:['変化','適応','柔軟','新しい','転換','多様','リモート','ハイブリッド','環境','変革','対応'],ekw:['change','adapt','flexible','new','transition','diverse','remote','hybrid','environment','shift','evolve','pivot','adjust']},
+  {ja:'平常心',en:'Equanimity',dj:'逆境でも動じない冷静さ',de:'Unwavering composure under pressure',kw:['ストレス','疲れ','疲労','プレッシャー','感情','バーンアウト','不安','焦り','冷静','平静','メンタル','浮き沈み'],ekw:['stress','tired','pressure','emotion','burnout','anxiety','calm','mental','overwhelm','exhausted','struggle','difficult','hard']},
+  {ja:'誠実さ',en:'Integrity',dj:'有言実行による信頼関係の構築',de:'Building trust through integrity and accountability',kw:['信頼','誠実','関係','コミュニケーション','人間関係','本音','連携','協力','評価','期待','家族'],ekw:['trust','honest','relationship','communication','team','family','connection','expectation','accountability','bond','support','conflict','colleague']},
 ];
 
 const SKILL = [
-  {ja:'嗜む',en:'Attunement',dj:'最悪を想定し、日々備える力',de:'The power to anticipate the worst and prepare daily',kw:['リスク','準備','備え','予防','危機','緊急','最悪','予測','災害','BCP','安否','想定','確認']},
-  {ja:'資質器量',en:'Cultivation',dj:'自分の性格や強みを知り、鍛えて人間性を深める力',de:"The power to deepen one's character by understanding and refining personal strengths",kw:['強み','特性','個性','才能','可能性','資質','人間性','性格','素質','発達']},
-  {ja:'心身一如',en:'Psychosomatic',dj:'心身のバランスを保つ力',de:'The power to maintain a balance between mind and body',kw:['心身','バランス','健康','メンタル','体','休息','疲労','ケア','疲れ','癒し','バーンアウト']},
-  {ja:'虚の心',en:'Objectivity',dj:'偏見を捨て、正しく見る・判断する力',de:'The power to discard prejudice and perceive or judge things accurately',kw:['偏見','客観','判断','本質','冷静','公平','俯瞰','偏り','見極め','公正','中立']},
-  {ja:'有構無構',en:'Adaptability',dj:'柔軟に対応し、変化に適応する力',de:'The power to respond flexibly and adapt to change',kw:['状況','変化','環境','柔軟','臨機応変','順応','融通','適応','ハイブリッド','リモート']},
-  {ja:'二刀一',en:'Optimization',dj:'今あるものを活かして力を発揮する力',de:'The power to maximize performance by utilizing existing resources',kw:['両立','統合','仕事と生活','家庭','複数','効率','掛け持ち','家事','育児','二つ']},
-  {ja:'打つと当たる',en:'Discernment',dj:'自分の行動と偶然を区別する力',de:'The power to distinguish between one\'s own actions and mere coincidence',kw:['タイミング','機会','決断','行動','実行','チャンス','的確','踏み出す','決める']},
-  {ja:'観見',en:'Perspective',dj:'広い視野と細部への洞察を切り替える力',de:'The power to switch between a broad perspective and insight into fine details',kw:['視点','観察','洞察','本質','理解','視野','広い','見通す','俯瞰']},
-  {ja:'陰陽の足',en:'Rhythm',dj:'動と静を使い分ける力',de:'The power to master the balance between action and stillness',kw:['リズム','流れ','ペース','浮き沈み','サイクル','起伏','ペース配分','動と静']},
-  {ja:'拍子',en:'Timing',dj:'周囲を見て、適切なタイミングで行動する力',de:'The power to observe surroundings and act at the optimal moment',kw:['タイミング','好機','最適','時機','見極め','機会','機をみる']},
+  {ja:'嗜む',en:'Attunement',dj:'最悪を想定し、日々備える力',de:'The power to anticipate the worst and prepare daily',kw:['リスク','準備','備え','予防','危機','緊急','最悪','予測','災害','BCP','安否','想定','確認'],ekw:['risk','prepare','crisis','emergency','disaster','anticipate','safety','worst','prevention','contingency','threat','readiness','vulnerable']},
+  {ja:'資質器量',en:'Cultivation',dj:'自分の性格や強みを知り、鍛えて人間性を深める力',de:"The power to deepen one's character by understanding and refining personal strengths",kw:['強み','特性','個性','才能','可能性','資質','人間性','性格','素質','発達'],ekw:['strength','character','talent','potential','personality','develop','trait','nature','capacity','self-awareness','identity','gift','quality']},
+  {ja:'心身一如',en:'Psychosomatic',dj:'心身のバランスを保つ力',de:'The power to maintain a balance between mind and body',kw:['心身','バランス','健康','メンタル','体','休息','疲労','ケア','疲れ','癒し','バーンアウト'],ekw:['mind','body','balance','health','mental','rest','fatigue','care','burnout','wellbeing','energy','physical','recovery']},
+  {ja:'虚の心',en:'Objectivity',dj:'偏見を捨て、正しく見る・判断する力',de:'The power to discard prejudice and perceive or judge things accurately',kw:['偏見','客観','判断','本質','冷静','公平','俯瞰','偏り','見極め','公正','中立'],ekw:['bias','judgment','fair','neutral','clarity','assess','analyze','perspective','objective','evaluate','impartial','accurate','discern']},
+  {ja:'有構無構',en:'Adaptability',dj:'柔軟に対応し、変化に適応する力',de:'The power to respond flexibly and adapt to change',kw:['状況','変化','環境','柔軟','臨機応変','順応','融通','適応','ハイブリッド','リモート'],ekw:['situation','adapt','environment','flexible','circumstance','respond','adjust','cope','navigate','improvise','resilient','versatile','flow']},
+  {ja:'二刀一',en:'Optimization',dj:'今あるものを活かして力を発揮する力',de:'The power to maximize performance by utilizing existing resources',kw:['両立','統合','仕事と生活','家庭','複数','効率','掛け持ち','家事','育児','二つ'],ekw:['efficient','juggle','integrate','multiple','family','household','balance','resource','maximize','leverage','productivity','streamline','work life']},
+  {ja:'打つと当たる',en:'Discernment',dj:'自分の行動と偶然を区別する力',de:'The power to distinguish between one\'s own actions and mere coincidence',kw:['タイミング','機会','決断','行動','実行','チャンス','的確','踏み出す','決める'],ekw:['timing','opportunity','decision','action','execute','chance','precise','commit','decisive','act','initiative','bold','breakthrough']},
+  {ja:'観見',en:'Perspective',dj:'広い視野と細部への洞察を切り替える力',de:'The power to switch between a broad perspective and insight into fine details',kw:['視点','観察','洞察','本質','理解','視野','広い','見通す','俯瞰'],ekw:['viewpoint','observe','insight','essence','understand','broad','overview','see','notice','awareness','zoom out','detail','big picture']},
+  {ja:'陰陽の足',en:'Rhythm',dj:'動と静を使い分ける力',de:'The power to master the balance between action and stillness',kw:['リズム','流れ','ペース','浮き沈み','サイクル','起伏','ペース配分','動と静'],ekw:['rhythm','flow','pace','cycle','ups and downs','active','rest','momentum','tempo','steady','pattern','consistent','routine']},
+  {ja:'拍子',en:'Timing',dj:'周囲を見て、適切なタイミングで行動する力',de:'The power to observe surroundings and act at the optimal moment',kw:['タイミング','好機','最適','時機','見極め','機会','機をみる'],ekw:['timing','optimal','moment','right time','observe','choose','window','seize','opportune','when','readiness','instinct','patience']},
 ];
 
 const MASTERY = [
@@ -1204,17 +1596,66 @@ function renderChallengeList(query){
         <div class="ch-num">${c.i+1}</div>
         <div class="ch-text">${c.text}</div>
       </div>`).join('')
-    : '<div class="empty"><span class="e-icon">🔍</span><p>「'+q+'」に一致する課題が見つかりません</p></div>';
+    : '<div class="empty"><span class="e-icon">🔍</span><p>No challenges found matching "'+q+'"</p></div>';
 }
 
 function filterChallenges(){
   renderChallengeList(document.getElementById('challenge-search').value);
 }
 
+function setChallengeMode(mode){
+  const isBrowse = mode === 'browse';
+  document.getElementById('tab-browse').classList.toggle('active', isBrowse);
+  document.getElementById('tab-random').classList.toggle('active', !isBrowse);
+  document.getElementById('ch-browse-wrap').style.display = isBrowse ? '' : 'none';
+  const randomWrap = document.getElementById('ch-random-wrap');
+  randomWrap.classList.toggle('show', !isBrowse);
+  document.getElementById('challenge-subtitle').textContent = isBrowse
+    ? 'Select the challenge closest to your situation'
+    : 'Draw a card and receive your challenge for today';
+}
+
+function pickRandomChallenge(){
+  const orb = document.getElementById('random-orb');
+  orb.classList.remove('spin');
+  void orb.offsetWidth;
+  orb.classList.add('spin');
+  setTimeout(() => {
+    const list = CHALLENGES[STATE.module];
+    const idx = Math.floor(Math.random() * list.length);
+    STATE.challengeIdx = idx;
+    showDescribeScreen(idx);
+  }, 400);
+}
+
 function selectChallenge(idx){
   STATE.challengeIdx=idx;
+  showDescribeScreen(idx);
+}
+
+function showDescribeScreen(idx){
   const challenge=CHALLENGES[STATE.module][idx];
-  const rec=recommend(STATE.module,challenge[0]);
+  const mod=MODULES.find(m=>m.id===STATE.module);
+  document.getElementById('describe-challenge-box').innerHTML=
+    '<div class="result-mod">'+mod.icon+' '+mod.en+'</div>'+
+    '<div class="result-text">'+challenge[1]+'</div>';
+  const ta=document.getElementById('situation-text');
+  ta.value='';
+  document.getElementById('situation-char').textContent='0 chars';
+  nav('s-describe');
+}
+
+function updateSituationChar(){
+  const ta=document.getElementById('situation-text');
+  const cc=document.getElementById('situation-char');
+  if(ta&&cc) cc.textContent=ta.value.length+' chars';
+}
+
+function submitSituation(){
+  const idx=STATE.challengeIdx;
+  const challenge=CHALLENGES[STATE.module][idx];
+  const userText=document.getElementById('situation-text').value.trim();
+  const rec=recommend(STATE.module,challenge[0],userText);
   STATE.result={
     id:Date.now().toString(),
     date:new Date().toISOString(),
@@ -1224,6 +1665,7 @@ function selectChallenge(idx){
     challengeIdx:idx,
     challengeJa:challenge[1],
     challengeEn:challenge[1],
+    situationText:userText,
     mindsets:rec.mindsets,
     skills:rec.skills,
     mastery:rec.mastery,
@@ -1240,6 +1682,14 @@ function selectChallenge(idx){
 function scoreByKw(kws,text){
   return kws.reduce((s,k)=>s+(text.includes(k)?1:0),0);
 }
+
+const CH_NAMES={
+  '地の巻':'Chapter of Earth',
+  '水の巻':'Chapter of Water',
+  '火の巻':'Chapter of Fire',
+  '風の巻':'Chapter of Wind',
+  '空の巻':'Chapter of Void',
+};
 
 const MOD_DEFAULTS={
   career:{m:[0,2],s:[1,2,7]},
@@ -1259,8 +1709,14 @@ const MOD_CH_BOOST={
   career:{1:2,3:1},team:{2:2,4:1},bcm:{1:2,5:1},welfare:{2:2,5:1}
 };
 
-function recommend(modId,text){
-  const ms=MINDSET.map((c,i)=>({i,s:scoreByKw(c.kw,text)+Math.random()*.5}));
+function recommend(modId,text,enText=''){
+  const en=enText.toLowerCase();
+  // English keywords score 1.8x when user has described their situation
+  const enBoost=en.length>10?1.8:0;
+  const ms=MINDSET.map((c,i)=>({
+    i,
+    s:scoreByKw(c.kw,text)+scoreByKw(c.ekw||[],en)*enBoost+Math.random()*.4
+  }));
   ms.sort((a,b)=>b.s-a.s);
   let topM=ms.slice(0,2).map(x=>x.i);
   if(ms[0].s<1){
@@ -1268,7 +1724,10 @@ function recommend(modId,text){
     if(!topM.includes(def[0]))topM[0]=def[0];
     if(!topM.includes(def[1]))topM[1]=def[1];
   }
-  const ss=SKILL.map((c,i)=>({i,s:scoreByKw(c.kw,text)+Math.random()*.5}));
+  const ss=SKILL.map((c,i)=>({
+    i,
+    s:scoreByKw(c.kw,text)+scoreByKw(c.ekw||[],en)*enBoost+Math.random()*.4
+  }));
   ss.sort((a,b)=>b.s-a.s);
   let topS=ss.slice(0,3).map(x=>x.i);
   if(ss[0].s<1){
@@ -1333,12 +1792,58 @@ function renderResult(r,source){
 
   const mQuotes=r.mastery.map(m=>
     '<div class="m-quote">'+
-      '<div class="mq-ch">'+m.ch+' 第'+m.n+'条</div>'+
+      '<div class="mq-ch">'+(CH_NAMES[m.ch]||m.ch)+' — Verse '+m.n+'</div>'+
       '<div class="mq-ja">'+m.en+'</div>'+
       '<div class="mq-en">'+m.en+'</div>'+
     '</div>').join('');
 
-  const saveBtn=source==='history'?'':'<button class="btn btn-gold" id="save-btn" onclick="saveResult()">'+(isSaved?'✦ Saved':'Save')+'</button>';
+  const existingNotes = r.mentoringNotes || '';
+  const hasSavedNotes = source === 'history' && existingNotes;
+
+  const isAdminViewing = STATE.user && STATE.user.isAdmin;
+  const saveBtn = source === 'history'
+    ? '<button class="btn btn-gold" onclick="updateNotes()">✍ Update Notes</button>'
+    : '<button class="btn btn-gold" id="save-btn" onclick="saveResult()">'+(isSaved?'✦ Saved':'Save')+'</button>';
+
+  // Admin comment section (admin only, when viewing history)
+  const adminCommentResult = (source==='history'&&isAdminViewing)
+    ?'<div class="sec-label">💬 MENTOR COMMENT</div>'+
+      '<div class="admin-comment-section" style="background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:1.2rem;margin-bottom:1.8rem">'+
+        '<div class="ac-label" style="margin-bottom:.6rem">Write feedback or guidance for this client</div>'+
+        '<textarea id="act-result-'+r.id+'" placeholder="Your comment will be shared with the client when they view their history…" oninput="updateAcCount(\'result-'+r.id+'\')" style="min-height:120px">'+escHtml(r.adminComment||'')+'</textarea>'+
+        '<div class="ac-footer">'+
+          '<span class="mentor-char-count" id="acc-result-'+r.id+'">'+(r.adminComment?r.adminComment.length:0)+' chars</span>'+
+          '<span class="ac-sent-badge" id="acb-result-'+r.id+'"'+(r.adminComment?' style="opacity:1"':'')+'>✦ Sent to client</span>'+
+          '<button class="btn btn-gold btn-sm" onclick="saveAdminCommentFromResult(\''+r.id+'\')">Save & Share</button>'+
+        '</div>'+
+      '</div>'
+    :'';
+
+  // Mentor message (non-admin users viewing history)
+  const mentorMessageResult = (source==='history'&&!isAdminViewing&&r.adminComment)
+    ?'<div class="sec-label">💬 MESSAGE FROM YOUR MENTOR</div>'+
+      '<div class="mentor-message-box" style="margin-bottom:1.8rem">'+
+        '<div class="mm-header">Your mentor has left you the following message</div>'+
+        '<div class="mm-text">'+escHtml(r.adminComment)+'</div>'+
+        (r.adminCommentDate?'<div class="mm-date">'+formatDate(r.adminCommentDate)+'</div>':'')+
+      '</div>'
+    :'';
+
+  const mentoringSection =
+    '<div class="sec-label">✍ MENTORING NOTES</div>'+
+    '<div class="mentor-notes-wrap">'+
+      '<div class="mentor-prompts">'+
+        '<div class="mentor-prompts-title">Mentoring Perspective</div>'+
+        '<div class="mentor-prompt"><span class="mentor-prompt-num">1</span>How will you convey this mindset to your client in your own words?</div>'+
+        '<div class="mentor-prompt"><span class="mentor-prompt-num">2</span>What questions will you ask to draw out deeper insights?</div>'+
+        '<div class="mentor-prompt"><span class="mentor-prompt-num">3</span>What is the action plan until the next session?</div>'+
+      '</div>'+
+      '<textarea class="mentor-textarea" id="mentor-notes" placeholder="Freely record your mentoring approach, questions, and action plan…" oninput="updateCharCount()">'+escHtml(existingNotes)+'</textarea>'+
+      '<div class="mentor-footer">'+
+        '<span class="mentor-char-count" id="mentor-char">'+existingNotes.length+' chars</span>'+
+        '<span class="notes-saved-badge'+(hasSavedNotes?' show':'')+'" id="notes-badge">✦ Saved</span>'+
+      '</div>'+
+    '</div>';
 
   document.getElementById('result-back-btn').textContent=backLabel;
   document.getElementById('result-back-btn').onclick=new Function(backFn);
@@ -1357,6 +1862,9 @@ function renderResult(r,source){
     '<div class="mastery-wrap">'+mQuotes+'</div>'+
     '<div class="sec-label">GUIDANCE — Advice</div>'+
     '<div class="advice-wrap"><span class="adv-title">SAMURAI WISDOM</span>'+escHtml(r.advice)+'</div>'+
+    mentoringSection+
+    mentorMessageResult+
+    adminCommentResult+
     '<div class="result-actions">'+
       saveBtn+
       '<button class="btn btn-ghost" onclick="printResult()">📄 Save as PDF</button>'+
@@ -1370,8 +1878,16 @@ function escHtml(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(
 // ═══════════════════════════════════════════════════════
 // SAVE / PDF / SHARE
 // ═══════════════════════════════════════════════════════
+function updateCharCount(){
+  const ta = document.getElementById('mentor-notes');
+  const cc = document.getElementById('mentor-char');
+  if(ta && cc) cc.textContent = ta.value.length + ' chars';
+}
+
 function saveResult(){
   if(!STATE.result)return;
+  const notesEl = document.getElementById('mentor-notes');
+  if(notesEl) STATE.result.mentoringNotes = notesEl.value.trim();
   STATE.result.saved=true;
   const results=loadResults();
   const idx=results.findIndex(r=>r.id===STATE.result.id);
@@ -1379,6 +1895,22 @@ function saveResult(){
   saveResults(results);
   const btn=document.getElementById('save-btn');
   if(btn){btn.textContent='✦ Saved';btn.disabled=true}
+  const badge=document.getElementById('notes-badge');
+  if(badge){badge.classList.add('show')}
+  const stamp=document.getElementById('saved-stamp');
+  stamp.classList.add('show');
+  setTimeout(()=>stamp.classList.remove('show'),2500);
+}
+
+function updateNotes(){
+  if(!STATE.result)return;
+  const notesEl = document.getElementById('mentor-notes');
+  if(notesEl) STATE.result.mentoringNotes = notesEl.value.trim();
+  const results=loadResults();
+  const idx=results.findIndex(r=>r.id===STATE.result.id);
+  if(idx>=0){results[idx]=STATE.result;saveResults(results);}
+  const badge=document.getElementById('notes-badge');
+  if(badge){badge.classList.add('show');}
   const stamp=document.getElementById('saved-stamp');
   stamp.classList.add('show');
   setTimeout(()=>stamp.classList.remove('show'),2500);
@@ -1391,7 +1923,7 @@ function shareWhatsApp(){
   const r=STATE.result;
   const mod=MODULES.find(m=>m.id===r.module);
   const short=r.challengeJa.length>40?r.challengeJa.substring(0,40)+'…':r.challengeJa;
-  const text='【SAMURAI in You — The Way of the Warrior】\n\n📋 '+mod.en+' Module\n\n課題: '+short+'\n\n⚔ マインドセット: '+r.mindsets.map(m=>m.en).join(' / ')+'\n🗡 スキルセット: '+r.skills.map(s=>s.en).join(' / ')+'\n\n📜 格言:\n「'+r.mastery[0].en.substring(0,60)+'…」\n\n#SAMURAIinYou';
+  const text='【SAMURAI in You — The Way of the Warrior】\n\n📋 '+mod.en+' Module\n\nChallenge: '+short+'\n\n⚔ Mindset: '+r.mindsets.map(m=>m.en).join(' / ')+'\n🗡 Skillset: '+r.skills.map(s=>s.en).join(' / ')+'\n\n📜 Quote:\n"'+r.mastery[0].en.substring(0,60)+'…"\n\n#SAMURAIinYou';
   window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank');
 }
 
@@ -1407,7 +1939,7 @@ function showHistory(adminMode){
     const results=loadResults();
     const phonesWithData=[...new Set(results.map(r=>r.userId))];
     const allUsers=users.filter(u=>phonesWithData.includes(u.phone));
-    sel.innerHTML='<option value="">── ユーザーを選択 ──</option>'+allUsers.map(u=>'<option value="'+u.phone+'">'+(u.name||u.phone)+' ('+u.phone+')</option>').join('');
+    sel.innerHTML='<option value="">── Select a user ──</option>'+allUsers.map(u=>'<option value="'+u.phone+'">'+(u.name||u.phone)+' ('+u.phone+')</option>').join('');
   }else{
     document.getElementById('history-title').textContent='Past Records';
     sel.style.display='none';
@@ -1428,28 +1960,72 @@ function renderHistory(){
   const results=loadResults().filter(r=>r.userId===targetPhone).sort((a,b)=>b.date.localeCompare(a.date));
   const container=document.getElementById('history-list');
   if(!results.length){container.innerHTML='<div class="empty"><span class="e-icon">📜</span><p>No records yet</p></div>';return;}
-  container.innerHTML=results.map((r,ri)=>{
-    const mod=MODULES.find(m=>m.id===r.module)||{ja:'不明',icon:'❓'};
+
+  // Admin stats bar
+  let statsHtml='';
+  if(isAdmin&&targetPhone){
+    const total=results.length;
+    const withNotes=results.filter(r=>r.mentoringNotes).length;
+    const withComment=results.filter(r=>r.adminComment).length;
+    const unread=results.filter(r=>r.adminComment&&!r.adminCommentRead).length;
+    statsHtml='<div class="admin-stats-bar">'+
+      '<div class="stat-chip"><strong>'+total+'</strong>Sessions</div>'+
+      '<div class="stat-chip"><strong>'+withNotes+'</strong>With Notes</div>'+
+      '<div class="stat-chip"><strong>'+withComment+'</strong>Commented</div>'+
+      (unread?'<div class="stat-chip"><strong style="color:var(--red2)">'+unread+'</strong>Unread</div>':'')+
+    '</div>';
+  }
+
+  container.innerHTML=statsHtml+results.map((r,ri)=>{
+    const mod=MODULES.find(m=>m.id===r.module)||{en:'Unknown',ja:'Unknown',icon:'❓'};
     const d=new Date(r.date);
     const ds=d.getFullYear()+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+String(d.getDate()).padStart(2,'0')+' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
     const short=r.challengeJa.length>50?r.challengeJa.substring(0,50)+'…':r.challengeJa;
+    const hasUnread=!isAdmin&&r.adminComment&&!r.adminCommentRead;
+    const commentIcon=r.adminComment?'💬 ':'';
+
+    // Admin: comment textarea section
+    const adminCommentSection=isAdmin
+      ?'<div class="admin-comment-section">'+
+          '<div class="ac-label">💬 MENTOR COMMENT</div>'+
+          '<textarea id="act-'+r.id+'" placeholder="Write feedback or guidance for this client…" oninput="updateAcCount(\''+r.id+'\')">'+escHtml(r.adminComment||'')+'</textarea>'+
+          '<div class="ac-footer">'+
+            '<span class="mentor-char-count" id="acc-'+r.id+'">'+(r.adminComment?r.adminComment.length:0)+' chars</span>'+
+            '<span class="ac-sent-badge" id="acb-'+r.id+'"'+(r.adminComment?' style="opacity:1"':'')+'>✦ Sent</span>'+
+            '<button class="btn btn-gold btn-sm" onclick="saveAdminComment(\''+r.id+'\','+ri+')">Save Comment</button>'+
+          '</div>'+
+        '</div>'
+      :'';
+
+    // User: mentor message display
+    const mentorMessageSection=(!isAdmin&&r.adminComment)
+      ?'<div class="mentor-message-box">'+
+          '<div class="mm-header">💬 MESSAGE FROM YOUR MENTOR</div>'+
+          '<div class="mm-text">'+escHtml(r.adminComment)+'</div>'+
+          (r.adminCommentDate?'<div class="mm-date">'+formatDate(r.adminCommentDate)+'</div>':'')+
+        '</div>'
+      :'';
+
     return '<div class="hist-item" id="hi-'+ri+'">'+
-      '<div class="hist-head" onclick="toggleHistoryItem('+ri+')">'+
+      '<div class="hist-head" onclick="toggleHistoryItem('+ri+',\''+r.id+'\')">'+
         '<div class="hist-meta">'+
           '<div class="hm-date">'+ds+'</div>'+
-          '<div class="hm-mod">'+mod.icon+' '+mod.en+'</div>'+
+          '<div class="hm-mod">'+mod.icon+' '+mod.en+(hasUnread?'<span class="unread-badge">💬 New</span>':commentIcon&&!isAdmin?'<span style="font-size:.65rem;color:var(--gold);margin-left:.3rem">💬</span>':'')+'</div>'+
           '<div class="hm-text">'+short+'</div>'+
         '</div>'+
         '<span style="color:var(--muted);font-size:.75rem">▼</span>'+
       '</div>'+
       '<div class="hist-detail" id="hd-'+ri+'">'+
-        '<div style="font-size:.75rem;color:var(--muted);margin-bottom:.5rem">課題 #'+(r.challengeIdx+1)+'</div>'+
+        '<div style="font-size:.75rem;color:var(--muted);margin-bottom:.5rem">Challenge #'+(r.challengeIdx+1)+'</div>'+
         '<div style="font-size:.82rem;margin-bottom:.7rem">'+r.challengeJa+'</div>'+
         '<div style="font-size:.72rem;color:var(--gold);margin-bottom:.25rem">Mindset: '+r.mindsets.map(m=>m.en).join(' / ')+'</div>'+
         '<div style="font-size:.72rem;color:var(--gold);margin-bottom:.7rem">Skillset: '+r.skills.map(s=>s.en).join(' / ')+'</div>'+
-        '<div class="hist-detail-actions">'+
-          '<button class="btn btn-ghost btn-sm" onclick="viewHistoryResult('+ri+')">詳細を見る</button>'+
-          '<button class="btn btn-danger btn-sm" onclick="deleteResult(\''+r.id+'\')">削除</button>'+
+        (r.mentoringNotes?'<div style="font-size:.72rem;color:var(--muted);margin-bottom:.3rem;letter-spacing:.08em;font-weight:600">✍ MENTORING NOTES</div><div style="font-size:.8rem;color:var(--cream2);line-height:1.7;margin-bottom:.7rem;white-space:pre-wrap;border-left:2px solid var(--gold);padding-left:.7rem">'+escHtml(r.mentoringNotes)+'</div>':'')+
+        mentorMessageSection+
+        adminCommentSection+
+        '<div class="hist-detail-actions" style="margin-top:.8rem">'+
+          '<button class="btn btn-ghost btn-sm" onclick="viewHistoryResult('+ri+')">View Details / Edit Notes</button>'+
+          '<button class="btn btn-danger btn-sm" onclick="deleteResult(\''+r.id+'\')">Delete</button>'+
         '</div>'+
       '</div>'+
     '</div>';
@@ -1457,8 +2033,74 @@ function renderHistory(){
   window._histResults=results;
 }
 
-function toggleHistoryItem(ri){
+function formatDate(iso){
+  const d=new Date(iso);
+  return d.getFullYear()+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+String(d.getDate()).padStart(2,'0')+' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
+}
+
+function toggleHistoryItem(ri,id){
   document.getElementById('hd-'+ri).classList.toggle('open');
+  // Mark admin comment as read when user opens the item
+  if(id&&STATE.user&&!STATE.user.isAdmin){
+    const results=loadResults();
+    const idx=results.findIndex(r=>r.id===id);
+    if(idx>=0&&results[idx].adminComment&&!results[idx].adminCommentRead){
+      results[idx].adminCommentRead=true;
+      saveResults(results);
+      // Remove unread badge from DOM
+      const mod=document.querySelector('#hi-'+ri+' .hm-mod .unread-badge');
+      if(mod) mod.remove();
+    }
+  }
+}
+
+function updateAcCount(id){
+  const ta=document.getElementById('act-'+id);
+  const cc=document.getElementById('acc-'+id);
+  if(ta&&cc) cc.textContent=ta.value.length+' chars';
+}
+
+function saveAdminCommentFromResult(id){
+  const ta=document.getElementById('act-result-'+id);
+  if(!ta) return;
+  const comment=ta.value.trim();
+  const results=loadResults();
+  const idx=results.findIndex(r=>r.id===id);
+  if(idx<0) return;
+  results[idx].adminComment=comment;
+  results[idx].adminCommentDate=new Date().toISOString();
+  results[idx].adminCommentRead=false;
+  saveResults(results);
+  if(STATE.result&&STATE.result.id===id){
+    STATE.result.adminComment=comment;
+    STATE.result.adminCommentDate=results[idx].adminCommentDate;
+    STATE.result.adminCommentRead=false;
+  }
+  const badge=document.getElementById('acb-result-'+id);
+  if(badge){badge.style.opacity='1';}
+  const stamp=document.getElementById('saved-stamp');
+  if(stamp){stamp.classList.add('show');setTimeout(()=>stamp.classList.remove('show'),2500);}
+}
+
+function saveAdminComment(id,ri){
+  const ta=document.getElementById('act-'+id);
+  if(!ta) return;
+  const comment=ta.value.trim();
+  const results=loadResults();
+  const idx=results.findIndex(r=>r.id===id);
+  if(idx<0) return;
+  results[idx].adminComment=comment;
+  results[idx].adminCommentDate=new Date().toISOString();
+  results[idx].adminCommentRead=false; // user hasn't read yet
+  saveResults(results);
+  // Update STATE cache
+  if(window._histResults&&window._histResults[ri]) window._histResults[ri]=results[idx];
+  // Show sent badge
+  const badge=document.getElementById('acb-'+id);
+  if(badge){badge.style.opacity='1';}
+  // Show toast
+  const stamp=document.getElementById('saved-stamp');
+  if(stamp){stamp.classList.add('show');setTimeout(()=>stamp.classList.remove('show'),2500);}
 }
 
 function viewHistoryResult(ri){
