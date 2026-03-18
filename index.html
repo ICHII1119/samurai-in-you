@@ -2181,11 +2181,16 @@ function showHistory(adminMode){
   if(adminMode&&STATE.user&&STATE.user.isAdmin){
     document.getElementById('history-title').textContent=t('allRecordsTitle');
     sel.style.display='block';
-    const users=loadUsers().filter(u=>!u.isAdmin);
+    const users=loadUsers();
     const results=loadResults();
-    const phonesWithData=[...new Set(results.map(r=>r.userId))];
-    const allUsers=users.filter(u=>phonesWithData.includes(u.phone));
-    sel.innerHTML='<option value="">'+t('selectUser')+'</option>'+allUsers.map(u=>'<option value="'+u.phone+'">'+(u.name||u.phone)+' ('+u.phone+')</option>').join('');
+    // 結果データに存在する全ユーザーのphone一覧（重複なし）
+    const phonesWithData=[...new Set(results.map(r=>r.userId).filter(Boolean))];
+    // userリストに登録がなくても結果があれば表示
+    const allUsers=phonesWithData.map(phone=>{
+      const u=users.find(u=>u.phone===phone);
+      return {phone, name: u&&!u.isAdmin?(u.name||''):''};
+    });
+    sel.innerHTML='<option value="">'+t('selectUser')+'</option>'+allUsers.map(u=>'<option value="'+u.phone+'">'+(u.name?u.name+' ('+u.phone+')':u.phone)+'</option>').join('');
   }else{
     document.getElementById('history-title').textContent='Past Records';
     sel.style.display='none';
@@ -2198,12 +2203,16 @@ function renderHistory(){
   const isAdmin=STATE.user&&STATE.user.isAdmin;
   const sel=document.getElementById('admin-user-select');
   let targetPhone=STATE.user?STATE.user.phone:null;
-  if(isAdmin&&sel.style.display!=='none'&&sel.value){targetPhone=sel.value}
-  else if(isAdmin&&sel.style.display!=='none'&&!sel.value){
-    document.getElementById('history-list').innerHTML='<div class="empty"><span class="e-icon">👤</span><p>'+t('pleaseSelectUser')+'</p></div>';
-    return;
+  let allMode=false;
+  if(isAdmin&&sel.style.display!=='none'){
+    if(sel.value){targetPhone=sel.value;}
+    else{allMode=true;} // ユーザー未選択時は全件表示
   }
-  const results=loadResults().filter(r=>r.userId===targetPhone).sort((a,b)=>b.date.localeCompare(a.date));
+  const allResults=loadResults();
+  const results=(allMode
+    ? allResults
+    : allResults.filter(r=>r.userId===targetPhone)
+  ).sort((a,b)=>b.date.localeCompare(a.date));
   const container=document.getElementById('history-list');
   if(!results.length){container.innerHTML='<div class="empty"><span class="e-icon">📜</span><p>'+t('noRecords')+'</p></div>';return;}
 
@@ -2226,9 +2235,11 @@ function renderHistory(){
     const mod=MODULES.find(m=>m.id===r.module)||{en:'Unknown',ja:'Unknown',icon:'❓'};
     const d=new Date(r.date);
     const ds=d.getFullYear()+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+String(d.getDate()).padStart(2,'0')+' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
-    const short=r.challengeJa.length>50?r.challengeJa.substring(0,50)+'…':r.challengeJa;
+    const short=(r.challengeJa||r.challengeEn||'').substring(0,50)+(r.challengeJa&&r.challengeJa.length>50?'…':'');
     const hasUnread=!isAdmin&&r.adminComment&&!r.adminCommentRead;
     const commentIcon=r.adminComment?'💬 ':'';
+    // 全件表示時はユーザー情報を表示
+    const userLabel=allMode?'<div style="font-size:.72rem;color:var(--muted);margin-bottom:.15rem">👤 '+r.userId+'</div>':'';
 
     // Admin: comment textarea section
     const adminCommentSection=isAdmin
@@ -2255,6 +2266,7 @@ function renderHistory(){
     return '<div class="hist-item" id="hi-'+ri+'">'+
       '<div class="hist-head" onclick="toggleHistoryItem('+ri+',\''+r.id+'\')">'+
         '<div class="hist-meta">'+
+          userLabel+
           '<div class="hm-date">'+ds+'</div>'+
           '<div class="hm-mod">'+mod.icon+' '+mod.en+(hasUnread?'<span class="unread-badge">💬 New</span>':commentIcon&&!isAdmin?'<span style="font-size:.65rem;color:var(--gold);margin-left:.3rem">💬</span>':'')+'</div>'+
           '<div class="hm-text">'+short+'</div>'+
@@ -2264,8 +2276,8 @@ function renderHistory(){
       '<div class="hist-detail" id="hd-'+ri+'">'+
         '<div style="font-size:.75rem;color:var(--muted);margin-bottom:.5rem">'+t('challengeNum')+(r.challengeIdx+1)+'</div>'+
         '<div style="font-size:.82rem;margin-bottom:.7rem">'+(CURRENT_LANG==="ja"?r.challengeJa:r.challengeEn)+'</div>'+
-        '<div style="font-size:.72rem;color:var(--gold);margin-bottom:.25rem">'+t('histMindset')+': '+r.mindsets.map(m=>CURRENT_LANG==="ja"?m.ja:m.en).join(' / ')+'</div>'+
-        '<div style="font-size:.72rem;color:var(--gold);margin-bottom:.7rem">'+t('histSkill')+': '+r.skills.map(s=>CURRENT_LANG==="ja"?s.ja:s.en).join(' / ')+'</div>'+
+        '<div style="font-size:.72rem;color:var(--gold);margin-bottom:.25rem">'+t('histMindset')+': '+(r.mindsets||[]).map(m=>CURRENT_LANG==="ja"?m.ja:m.en).join(' / ')+'</div>'+
+        '<div style="font-size:.72rem;color:var(--gold);margin-bottom:.7rem">'+t('histSkill')+': '+(r.skills||[]).map(s=>CURRENT_LANG==="ja"?s.ja:s.en).join(' / ')+'</div>'+
         (r.mentoringNotes?'<div style="font-size:.72rem;color:var(--muted);margin-bottom:.3rem;letter-spacing:.08em;font-weight:600">'+t('histNotes')+'</div><div style="font-size:.8rem;color:var(--cream2);line-height:1.7;margin-bottom:.7rem;white-space:pre-wrap;border-left:2px solid var(--gold);padding-left:.7rem">'+escHtml(r.mentoringNotes)+'</div>':'')+
         mentorMessageSection+
         adminCommentSection+
